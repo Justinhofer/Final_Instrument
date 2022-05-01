@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instrument Store</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1 class="titleName"> Justin's Musical Instrument's </h1>
+<div id="instrument-store">
+    <button id = "add" class="button" v-on:click = "addNewInstrument()">Add Instrument</button>
+    <button id = "cart" class="button" v-on:click = "emptyCart"> Cart: {{cart.length}}</button>
+    <div v-for = "(instrument,index) in instruments" class="instrumentBanner" class="instrument.brand"
+         v-on:click="displayInfo(instrument)" v-bind:class ="{hide:instrument.inCart}">
+    <div class ="box">
+        <img v-bind:src = "instrument.img">
+        <div> {{instrument.name}}</div>
+        <div> {{instrument.brand}}</div>
+        <div> Click for more info!</div>
+        <button v-on:click = "addToCart(instrument)">Add to Cart</button>
+    </div>
+    <div class ="popUp" v-show = "instrument.details">
+        <div class="popUpInfo">
+            <img v-bind:src="instrument.img"/>
+            <p> Name: {{instrument.name}}</p>
+            <p> Brand:{{instrument.brand}}</p>
+            <p> Price: ${{instrument.price}}</p>
+            <button v-on:click = "addToCart(instrument)">Add to Cart</button>
+        </div>
+        </div>
+    </div>
+    <div class="empty" v-show="this.cart.length === this.instruments.length">
+        <h1> We are out of stock </h1>
+    </div>
+    <div class="popUp" v-show="addInstrumentPopUp">
+        <div class="popUpinfo">
+            <h3> Add New Instrument</h3>
+            <h4> Are you looking for a specific instrument?</h4>
+            <h4> Add it to the site! Enter information down below </h4>
+            <ul>
+                <li>
+                    <label for="name"> Instrument Name:</label>
+                    <input type="text" v-model = "instruments.name" placeholder = "Instrument Name.."/>
+                </li>
+                <li> <label for="brand"> Instrument Brand:</label>
+                    <select v-model = "instruments.brand" placeholder = "select">
+                    <option value ="yamaha" id="yamaha"> Yamaha</option>
+                        <option value="fender" id="fender">Fender</option>
+                        <option value="maton" id="maton">Maton</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="price"> Instrument Price: </label>
+                    <input type="text" v-model = "instruments.price" placeholder="Instrument Price.."/>
+                </li>
+            </ul>
+
+            <button class="addNewInstrument" v-on:click="addInstrument()">Add Instrument</button>
+            <button class="cancel" v-on:click = "addNewInstrument()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+.titleName{
+    text-align:center;
+    font-size: 50px;
+    font-weight:bold;
+    text-decoration:underline;
+    color:Black;
+}
+#instrument-store{
+    display:flex;
+    flex-wrap:wrap;
+}
+.instrumentBanner{
+    height:300px;
+    width:350px;
+    border-radius:10px;
+    border:5px solid black;
+    box-shadow:2px 2px 2px dimgrey;
+    margin-top:45px;
+    margin-left:130px;
+    margin-right:130px;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.fender:hover {
+    background-color:red;
+    color:whitesmoke;
+}
+.yamaha:hover {
+    background-color: green;
+    color:white;
+}
+.maton:hover {
+    background-color:blue;
+    color:white;
+}
+
+img{
+    height:150px
+}
+
+.box {
+    text-align:center;
+}
+
+button {
+    background-color: greenyellow;
+    border:1;
+    border-color: black;
+    padding:8px;
+}
+
+#add {
+    margin-top:1px;
+    margin-left:2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#cart {
+    margin-top:1px;
+    margin-right:2px;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.hide{
+    display:none;
+}
+
+.empty{
+    margin:auto;
+    paddint:100px
+}
+
+.popUp{
+    background-color:antiquewhite;
+    position: absolute;
+    left:0;
+    botton:0;
+    right:0;
+    height:100%;
+    width:100%;
+    display:none;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.popUpInfo{
+    height:400px;
+    width:350px;
+    background-color:white;
+    position: fixed;
+    top:25%;
+    left:40%;
+    display:none;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
+.popUp img{
+    height:100px;
+}
